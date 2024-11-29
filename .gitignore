@@ -1,0 +1,17 @@
+node_modules
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+screenshots
+reports
+VRTReport
+vctreport
+
+features/**/**.js
+*.map
+.kraken/
+*.js
+*.d.ts
+*.tsbuildinfo
+content

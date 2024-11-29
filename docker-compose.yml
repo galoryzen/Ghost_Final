@@ -1,0 +1,12 @@
+services:
+  ghost:
+    image: ghost:4.5
+    container_name: ghost-testing
+    restart: always
+    ports:
+      - "9333:2368"
+    environment:
+      NODE_ENV: development
+      url: http://localhost:9333
+    volumes:
+      - ./content:/var/lib/ghost/content
