@@ -7,7 +7,11 @@
     "test-pw-regular": "docker rm --force ghost-testing; npx playwright test --project=regular --workers 1",
     "test-pw-regular-windows": "docker rm --force ghost-testing & npx playwright test --project=regular --workers 1",
     "data-validation": "docker rm --force ghost-testing; npx playwright test --project=data --workers 1",
-    "generate-pool": "npx ts-node e2e-playwright/util/dataGenerator.ts"
+    "generate-pool": "npx ts-node e2e-playwright/util/dataGenerator.ts",
+    "vrt-base": "CI=1 GHOST_VRT=1 GHOST_VERSION=4.5 npx playwright test --project=regular",
+    "vrt-old": "CI=1 GHOST_VRT=1 GHOST_VERSION=5.96.0 npx playwright test --project=regular",
+    "vrt-report": "tsc shared/vrt.ts && node shared/vrt.js",
+    "vrt": "npm run vrt-base && npm run vrt-old"
   },
   "keywords": [],
   "author": "",
@@ -18,7 +22,6 @@
     "@types/node": "^22.9.0",
     "@types/pixelmatch": "^5.2.6",
     "@types/pngjs": "^6.0.5",
-    "@types/resemblejs": "^4.1.3",
     "kraken-node": "^1.0.24",
     "source-map-loader": "^3.0.1",
     "source-map-support": "^0.5.21",
@@ -28,7 +31,7 @@
   "dependencies": {
     "@types/express": "^4.17.13",
     "@types/nunjucks": "^3.2.1",
-    "@types/resemblejs": "^4.1.0",
+    "canvas": "^2.11.2",
     "chokidar": "^3.5.3",
     "commander": "^9.2.0",
     "express": "^4.18.1",

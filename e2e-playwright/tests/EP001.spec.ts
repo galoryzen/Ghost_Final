@@ -3,10 +3,16 @@ import { LoginPage } from "../page/LoginPage";
 import { faker } from "@faker-js/faker";
 import { CreatePagePage } from "../page/CreatePagePage";
 import { PageListPage } from "../page/PageListPage";
+import { VISUAL_REGRESSION_TESTING } from "../../shared/config";
 
 test("EP001 Given no page created, When I create a page, Then the page list should be updated with the new Page", async ({
   page,
 }, testInfo) => {
+  test.skip(
+    VISUAL_REGRESSION_TESTING,
+    "Skipping for VRT"
+  );
+
   const loginPage = new LoginPage(page);
   const createPagePage = new CreatePagePage(page);
   const pageListPage = new PageListPage(page);

@@ -4,14 +4,14 @@ import { LoginPage } from "../page/LoginPage";
 import { DashboardPage } from "../page/DashboardPage";
 import { MembersPage } from "../page/MembersPage";
 import { faker } from "@faker-js/faker";
-import { VERSION } from "../../shared/config";
+import { VISUAL_REGRESSION_TESTING } from "../../shared/config";
 
 test("EP005 Given the dashboard is accessed, When I create a member, Then the activity log should contain a 'Created manually' action", async ({
   page,
 }, testInfo) => {
   test.skip(
-    VERSION !== "5.96.0",
-    "The functionality was not available in this version"
+    VISUAL_REGRESSION_TESTING,
+    "Skipping for VRT"
   );
 
   const loginPage = new LoginPage(page);

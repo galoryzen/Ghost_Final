@@ -4,10 +4,16 @@ import { faker } from "@faker-js/faker";
 import { CreatePagePage } from "../page/CreatePagePage";
 import { PageListPage } from "../page/PageListPage";
 import { takeScreenshot } from "../util/util";
+import { VISUAL_REGRESSION_TESTING } from "../../shared/config";
 
 test("EP002 Given the no page created, When I create 2 pages, Then the page list should be sorted by creation time", async ({
   page,
 }, testInfo) => {
+  test.skip(
+    VISUAL_REGRESSION_TESTING,
+    "Skipping for VRT"
+  );
+
   const loginPage = new LoginPage(page);
   const createPagePage = new CreatePagePage(page);
   const pageListPage = new PageListPage(page);

@@ -5,8 +5,7 @@ node_modules
 /playwright/.cache/
 screenshots
 reports
-VRTReport
-vctreport
+vrt-report
 
 features/**/**.js
 *.map
