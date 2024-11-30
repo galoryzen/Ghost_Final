@@ -2,8 +2,10 @@
 
 import * as fs from 'fs';
 import * as path from 'path';
-import * as resemble from 'resemblejs';
+//import * as resemble from 'resemblejs';
 import * as nunjucks from 'nunjucks';
+import { get } from 'http';
+const resemble = require('resemblejs');
 
 interface StepResult {
     stepName: string;
@@ -117,6 +119,16 @@ function generateReport(testResults: TestResult[], outputPath: string, version1:
     console.log(`Report generated at ${reportPath}`);
 }
 
+function getAnalogPath(fileName:string, pathSecondVersion:string):string {
+    const images = fs.readdirSync(pathSecondVersion).filter(file => file.endsWith('.png'));
+    const fixedName = fileName.substring(4);
+    for (let image of images) {
+        if (image.includes(fixedName)) {
+            return path.join(pathSecondVersion, image);
+        }
+    }
+    return "";
+}
 
 async function main() {
     const projectRoot = path.resolve(__dirname, '..');
@@ -157,7 +169,7 @@ async function main() {
 
         for (const imageName of images1) {
             const imagePath1 = path.join(testFolderPath1, imageName);
-            const imagePath2 = path.join(testFolderPath2, imageName);
+            const imagePath2 = getAnalogPath(imageName, testFolderPath2);
 
             if (!fs.existsSync(imagePath2)) {
                 console.warn(`Image ${imageName} in test ${testFolder} does not exist in version ${version2}`);
