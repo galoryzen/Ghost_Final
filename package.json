@@ -19,7 +19,7 @@
   "devDependencies": {
     "@faker-js/faker": "^9.2.0",
     "@playwright/test": "^1.48.2",
-    "@types/node": "^22.9.0",
+    "@types/node": "^22.10.1",
     "@types/pixelmatch": "^5.2.6",
     "@types/pngjs": "^6.0.5",
     "kraken-node": "^1.0.24",
