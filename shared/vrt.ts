@@ -183,7 +183,7 @@ async function main() {
 
             const misMatchPercentage = parseFloat(comparison.misMatchPercentage);
 
-            const isDifferent = misMatchPercentage > 30;
+            const isDifferent = misMatchPercentage > 10;
 
             if (isDifferent) {
                 testFailed = true;
