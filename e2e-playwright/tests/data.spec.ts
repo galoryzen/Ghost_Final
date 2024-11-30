@@ -95,13 +95,9 @@ Object.entries(Scenarios).forEach(([identifier, scenario], index) => {
   const pool = getNextDataPool();
   const cookie: Cookie = { scenarios: [scenario], pool };
 
-  var i = 20;
-  // console log a md table
-  console.log(`| ${i + index + 1} | 1 | DV | ${cookie.scenarios[0].title} |  |`);
-
-  // test(nameDataScenario(cookie, index + 1), async ({ page }, testinfo) => {
-  //   const config: ScenarioTestConfig = { page, testinfo, identifier, scenario };
-  //   await runScenario(config, cookie);
-  //   scenariosRun.push(cookie);
-  // });
+  test(nameDataScenario(cookie, index + 1), async ({ page }, testinfo) => {
+    const config: ScenarioTestConfig = { page, testinfo, identifier, scenario };
+    await runScenario(config, cookie);
+    scenariosRun.push(cookie);
+  });
 });
