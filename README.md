@@ -13,7 +13,7 @@
 ## Links de Relevancia
 
 - [Estrategia de Pruebas]()
-- [Inventario de Pruebas Manuales Exploratorias]()
+- [Inventario de Pruebas Manuales Exploratorias](https://docs.google.com/spreadsheets/d/1DP8p5GiagAl7HbPjzf1thdzFkGkWbMSU4DvKUxGeKJ4/edit?gid=0#gid=0)
 - [Inventario de Pruebas General]()
 - [Reporte VRT]()
   
