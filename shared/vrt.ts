@@ -119,7 +119,7 @@ function generateReport(testResults: TestResult[], outputPath: string, version1:
     console.log(`Report generated at ${reportPath}`);
 }
 
-function getAnalogPath(fileName:string, pathSecondVersion:string):string {
+function getAnalogPath(fileName: string, pathSecondVersion: string): string {
     const images = fs.readdirSync(pathSecondVersion).filter(file => file.endsWith('.png'));
     const fixedName = fileName.substring(4);
     for (let image of images) {
@@ -169,7 +169,7 @@ async function main() {
 
         for (const imageName of images1) {
             const imagePath1 = path.join(testFolderPath1, imageName);
-            const imagePath2 = getAnalogPath(imageName, testFolderPath2);
+            const imagePath2 = path.join(testFolderPath2, imageName);
 
             if (!fs.existsSync(imagePath2)) {
                 console.warn(`Image ${imageName} in test ${testFolder} does not exist in version ${version2}`);
@@ -181,9 +181,11 @@ async function main() {
 
             const comparison = await compareImages(imageBuffer1, imageBuffer2);
 
-            const misMatchPercentage = parseFloat(comparison.misMatchPercentage);
+            // misMatchPercentage round to integer
+            const misMatchPercentage = Math.round(comparison.rawMisMatchPercentage);
 
-            const isDifferent = misMatchPercentage > 10;
+
+            const isDifferent = misMatchPercentage >= 10;
 
             if (isDifferent) {
                 testFailed = true;
