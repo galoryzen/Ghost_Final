@@ -50,6 +50,13 @@ export default defineConfig({
       testIgnore: ['data.spec.ts']
     },
     {
+      name: 'regular-firefox',
+      use: {
+        ...devices['Desktop Firefox'],
+      },
+      testIgnore: ['data.spec.ts']
+    },
+    {
       name: 'data',
       use: {
         ...devices['Desktop Chrome'],

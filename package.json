@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test-pw-regular": "docker rm --force ghost-testing; npx playwright test --project=regular --workers 1",
-    "test-pw-regular-windows": "docker rm --force ghost-testing & npx playwright test --project=regular --workers 1",
+    "e2e-chrome": "docker rm --force ghost-testing; npx playwright test --project=regular --workers 1",
+    "e2e-firefox": "docker rm --force ghost-testing; npx playwright test --project=regular-firefox --workers 1",
     "data-validation": "docker rm --force ghost-testing; npx playwright test --project=data --workers 1",
     "generate-pool": "npx ts-node e2e-playwright/util/dataGenerator.ts",
-    "vrt-base": "CI=1 GHOST_VRT=1 GHOST_VERSION=4.5 npx playwright test --project=regular",
-    "vrt-old": "CI=1 GHOST_VRT=1 GHOST_VERSION=5.96.0 npx playwright test --project=regular",
+    "vrt-base": "CI=1 GHOST_VRT=1 GHOST_VERSION=4.5 npx playwright test --project=regular-firefox",
+    "vrt-old": "CI=1 GHOST_VRT=1 GHOST_VERSION=5.96.0 npx playwright test --project=regular-firefox",
     "vrt-report": "tsc shared/vrt.ts && node shared/vrt.js",
     "vrt": "npm run vrt-base && npm run vrt-old"
   },

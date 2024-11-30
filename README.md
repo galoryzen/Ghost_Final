@@ -44,6 +44,7 @@ npm install
 #### 2. Instalar dependencias nivel de sistema
 
 - Chromium
+- Firefox
 - Docker
 
 Instalar playwright browsers:
@@ -61,7 +62,7 @@ Si tiene problemas para instalar siga [la guía oficial de instalación de playw
 
 
 ```bash
-npm run test-pw-regular
+npm run e2e-firefox
 ```
 > [!TIP]
 > Si tiene problemas para instalar o correr playwright [dirígase a la guía de instalación](https://playwright.dev/docs/intro#installation)
