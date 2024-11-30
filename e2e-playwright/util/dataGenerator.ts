@@ -45,6 +45,28 @@ export interface ScenarioConfig {
 
 type ScenarioSchema = Record<string, ScenarioConfig>;
 export const Scenarios: ScenarioSchema = {
+    emojiName: {
+        title: "Emoji Name",
+        oracle: true,
+        data: {
+            name: { kind: 'emoji' },
+        },
+        model: 'member',
+    },
+    normalEmail: {
+        title: "Normal Email",
+        oracle: true,
+        data: {
+            email: { length: 30 },
+        },
+        model: 'member',
+    },
+    invalidEmail: {
+        title: "Invalid Email",
+        oracle: false,
+        data: { email: { kind: 'invalid' } },
+        model: 'member',
+    },
     quotedEmoji: {
         title: "[BUG] Quoted emojis email",
         oracle: false,
