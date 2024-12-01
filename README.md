@@ -17,7 +17,7 @@
 - [Inventario de Pruebas General](https://github.com/galoryzen/Ghost_Final/blob/main/other_md/inventario_general.md)
   
 Resultados:
-- [Informe Resultados](https://github.com/galoryzen/Ghost_Final/wiki/Retrospectiva)
+- [Retrospectiva](https://github.com/galoryzen/Ghost_Final/wiki/Retrospectiva)
 
 # Información General
 
