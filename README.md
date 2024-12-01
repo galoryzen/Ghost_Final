@@ -12,9 +12,10 @@
 
 ## Links de Relevancia
 
-- [Estrategia de Pruebas]()
+- [Estrategia de Pruebas](https://uniandes-my.sharepoint.com/:w:/r/personal/n_fajardo_uniandes_edu_co/Documents/Trabajos%20Maestr%C3%ADa/Pruebas%20automatizadas%20de%20software/Entrega%20Propuesta%20final/EstrategiaPruebasFinal.docx?d=w3ac9955b2f9f40daa11c155a765edbf4&csf=1&web=1&e=EWLBUV)
 - [Inventario de Pruebas Manuales Exploratorias](https://docs.google.com/spreadsheets/d/1DP8p5GiagAl7HbPjzf1thdzFkGkWbMSU4DvKUxGeKJ4/edit?gid=0#gid=0)
 - [Inventario de Pruebas General](https://github.com/galoryzen/Ghost_Final/blob/main/other_md/inventario_general.md)
+- [Link Video](https://www.youtube.com/watch?v=ll9Gd6BUxqE)
   
 Resultados:
 - [Retrospectiva](https://github.com/galoryzen/Ghost_Final/wiki/Retrospectiva)
